@@ -1,10 +1,10 @@
 :root {
   /* hero footer bacground */
-  --dark-hero: #2f303a;
+  --bacground-hero: #2f303a;
   --white: #ffffff;
-  --txt-dark: #212121;
-  --txt-grey: #757575;
-  --white-blue: #2196f3;
+  --txt-title-color: #212121;
+  --txt-description: #757575;
+  --logo-color: #2196f3;
   --tem-section: #f5f4fa;
   --border-color: #ececec;
   --border-button-color: #eeeeee;
@@ -21,9 +21,31 @@ body {
   font-family: "Roboto", sans-serif;
   margin-left: 0;
 }
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+.logo-nav {
+  display: inherit;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
+}
+.container {
+  width: 1170px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.flex-container {
+  display: flex;
 }
 
 /* LOGO */
@@ -33,17 +55,17 @@ a {
   font-weight: bold;
   font-size: 26px;
   line-height: 31px;
-  color: var(--txt-dark);
+  color: var(--txt-title-color);
   text-decoration: none;
   font-family: var(--logo-font);
-  margin-left: 250px;
+
   margin-top: 24px;
   margin-right: 43px;
   cursor: pointer;
 }
 
 .logo-color {
-  color: var(--white-blue);
+  color: var(--logo-color);
   font-style: normal;
   font-weight: bold;
   font-size: 26px;
@@ -64,13 +86,15 @@ header {
   display: flex;
   margin-top: 32px;
   list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 32px;
 }
 .list-anchor {
   margin-left: 50px;
 }
 
 .nav-anchor {
-  color: var(--txt-dark);
+  color: var(--txt-title-color);
   width: 68px;
   height: 16px;
   font-size: 14px;
@@ -81,36 +105,41 @@ header {
 }
 
 .nav-anchor:hover {
-  color: var(--txt-dark);
-  color: var(--white-blue);
+  color: var(--txt-title-color);
+  color: var(--logo-color);
 }
 .nav-active-anchor {
-  color: var(--white-blue);
+  color: var(--logo-color);
 }
 .contacts {
   display: flex;
   margin-top: 32px;
   list-style-type: none;
-  margin-left: 300px;
-  margin-bottom: 32px;
+  margin-left: auto;
+  padding-left: 0;
 }
 .conctacts-link {
-  margin-left: 50px;
-  margin-top: 32px;
-  color: var(--txt-grey);
+  color: var(--txt-description);
   text-decoration: none;
   font-weight: 500px;
+  margin-top: 32px;
 }
 
+.conctacts-link-item {
+  margin-left: 0px;
+}
+.conctacts-link-item:last-child {
+  margin-left: 50px;
+}
 .conctacts-link:hover {
-  color: var(--txt-grey);
-  color: var(--white-blue);
+  color: var(--txt-description);
+  color: var(--logo-color);
 }
 
 /* section hero  */
 
 .hero-baner {
-  background-color: var(--dark-hero);
+  background-color: var(--bacground-hero);
   padding: 200px 452px 280px 452px;
   box-sizing: border-box;
   width: 1600px;
@@ -134,9 +163,9 @@ header {
 }
 .hero-button {
   width: 200px;
-  height: 50px;
+  min-height: 50px;
   display: inline-block;
-  background-color: var(--white-blue);
+  background-color: var(--logo-color);
   font-weight: 700px;
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -152,7 +181,8 @@ header {
 
 /* SECTION DESCR */
 .section-descr {
-  margin-top: 94px;
+  padding-top: 94px;
+  padding-bottom: 94px;
   background-color: var(--white);
 }
 .title-details {
@@ -165,10 +195,7 @@ header {
 
 .list-details-descr {
   display: flex;
-}
-.list-details-descr {
-  margin-left: 215px;
-  margin-right: 215px;
+  padding-left: 0;
 }
 
 .list-text {
@@ -186,7 +213,7 @@ header {
 
 .what-we-do {
   align-items: center;
-  margin-top: 94px;
+  padding-bottom: 94px;
   background-color: var(--white);
 }
 .what-we-do-title {
@@ -217,21 +244,21 @@ header {
 /* section teem  photo  */
 
 .teem {
-  margin-top: 94px;
   background-color: var(--tem-section);
   align-items: center;
   padding-bottom: 94px;
+  padding-top: 94px;
 }
 
 .teem-title {
-  width: 264px;
-  height: 42px;
+  text-align: center;
   font-style: normal;
   font-weight: bold;
   font-size: 36px;
   line-height: 42px;
-  margin: 94px 668px 50px 668px;
-  padding-top: 94px;
+
+  margin-top: 0;
+  margin-bottom: 54px;
 }
 
 .teem-name {
@@ -239,13 +266,13 @@ header {
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-  color: var(--txt-dark);
+  color: var(--txt-title-color);
   text-align: center;
   margin-top: 30px;
   margin-bottom: 10px;
 }
 .teem-descr {
-  color: var(--txt-grey);
+  color: var(--txt-description);
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -274,11 +301,10 @@ header {
 /* footer */
 
 footer {
-  background-color: var(--dark-hero);
-  position: absolute;
+  background-color: var(--bacground-hero);
   width: 1600px;
   height: 252px;
-  padding-left: 250px;
+
   margin-top: 94px;
 }
 .footer-studio {
@@ -301,20 +327,21 @@ footer {
   list-style-type: none;
   padding: 0;
   margin-top: 20px;
-}
-.footer-contact :first-child {
-  margin-top: 0;
+
   margin-bottom: 0;
 }
-.footer-contact li {
+
+.footer-contact-list-item {
   margin-top: 9px;
 }
 .footer-contact a {
-  color: var(--txt-grey);
+  color: var(--txt-description);
 }
 
 .contact-adres {
   color: var(--white);
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* PORTFOLIO  */
@@ -322,7 +349,7 @@ footer {
 /* section portfolio work */
 
 .nav-anchor {
-  color: var(--txt-dark);
+  color: var(--txt-title-color);
   width: 68px;
   height: 16px;
   font-size: 14px;
@@ -333,8 +360,8 @@ footer {
 }
 
 .nav-anchor:hover {
-  color: var(--txt-dark);
-  color: var(--white-blue);
+  color: var(--txt-title-color);
+  color: var(--logo-color);
 }
 
 .button-portfolio {
@@ -347,6 +374,7 @@ footer {
   list-style-type: none;
   margin-top: 94px;
   margin-bottom: 50px;
+  padding-left: 0;
 }
 .button-list {
   margin-right: 8px;
@@ -355,7 +383,7 @@ footer {
   cursor: pointer;
 }
 .button-list:hover {
-  background-color: var(--white-blue);
+  background-color: var(--logo-color);
   color: var(--white);
 }
 .button-list {
@@ -363,7 +391,7 @@ footer {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
-  height: 38px;
+  min-height: 38px;
   background-color: var(--tem-section);
   border-color: var(--tem-section);
   border: none;
@@ -371,7 +399,7 @@ footer {
   font-weight: 500;
   font-size: 16px;
   line-height: 26px;
-  color: var(--txt-dark);
+  color: var(--txt-title-color);
 }
 
 .portfolio-ul-descr {
@@ -395,12 +423,12 @@ footer {
   font-weight: bold;
   font-size: 18px;
   line-height: 36px;
-  color: var(--txt-dark);
+  color: var(--txt-title-color);
   margin-top: 20px;
   margin-bottom: 0;
 }
 .list-descr-program {
-  color: var(--txt-grey);
+  color: var(--txt-description);
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
