@@ -84,10 +84,8 @@ header {
 .navigation {
   margin: 0;
   display: flex;
-  margin-top: 32px;
   list-style-type: none;
   padding-left: 0;
-  margin-bottom: 32px;
 }
 .list-anchor {
   margin-left: 50px;
@@ -102,6 +100,9 @@ header {
   letter-spacing: 0.02em;
   text-decoration: none;
   font-weight: 500;
+  padding-bottom: 32px;
+  padding-top: 32px;
+  display: block;
 }
 
 .nav-anchor:hover {
@@ -341,6 +342,7 @@ footer {
   color: var(--white);
   margin-top: 0;
   margin-bottom: 0;
+  font-style: normal;
 }
 
 /* PORTFOLIO  */
